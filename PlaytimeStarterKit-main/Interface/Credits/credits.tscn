@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdmodcncea3gn"]
+
+[ext_resource type="Script" uid="uid://betrlrkjnkf4i" path="res://Interface/Credits/credits.gd" id="1_2lkgs"]
+[ext_resource type="FontFile" uid="uid://dp3oq0ou16joq" path="res://Interface/Font/VCR_OSD_MONO_1.001.ttf" id="3_ydsuc"]
+[ext_resource type="AudioStream" uid="uid://hnnb33lemvjh" path="res://Interface/Credits/SW_MUS_ClockIsTicking.wav" id="4_ydsuc"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2lkgs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Node2D" parent="."]
+position = Vector2(0, 366)
+
+[node name="Label" type="Label" parent="Credits"]
+offset_left = 3.0
+offset_top = 462.0
+offset_right = 1155.0
+offset_bottom = 1680.0
+theme_override_fonts/font = ExtResource("3_ydsuc")
+theme_override_font_sizes/font_size = 36
+text = "GAME TITLE :O
+
+
+
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+GAME CREDIT :O
+"
+horizontal_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ydsuc")
+autoplay = true

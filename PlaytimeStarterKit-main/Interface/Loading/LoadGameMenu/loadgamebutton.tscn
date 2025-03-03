@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://blbde3nsukjhl"]
+
+[ext_resource type="Theme" uid="uid://c3y4p2f8djdyb" path="res://Interface/MainMenu/Themes/title_button.tres" id="1_y51hu"]
+[ext_resource type="Script" uid="uid://cxowskoo66nfw" path="res://Interface/Loading/LoadGameMenu/load_game_button.gd" id="2_0lp7s"]
+[ext_resource type="FontFile" uid="uid://yydkv6hefkdp" path="res://Interface/Font/NotoSansJP-Regular.otf" id="3_js3q3"]
+[ext_resource type="Texture2D" uid="uid://bivri32i53cow" path="res://Interface/Loading/LoadGameMenu/Objective.png" id="5_rwlj6"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5jc76"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-952, -490.5, 0, 1904, 981, 0),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 34393296913,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 2, 0, 1, 0, 0, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 110, 196, 0, 64, 245, 195, 0, 0, 110, 196, 0, 64, 245, 67, 0, 0, 110, 68, 0, 64, 245, 67, 0, 0, 110, 68, 0, 64, 245, 195)
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_meup3"]
+load_path = "res://.godot/imported/Chase.png-f8b2d889d0f3f0f70ce64a60a130ec0d.ctex"
+
+[node name="Load" type="Button"]
+offset_left = 326.0
+offset_top = 133.0
+offset_right = 826.0
+offset_bottom = 206.0
+theme = ExtResource("1_y51hu")
+script = ExtResource("2_0lp7s")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 15.0
+offset_right = 500.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 18
+text = "Load Title"
+
+[node name="Objective" type="Label" parent="."]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 37.0
+offset_right = 500.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_js3q3")
+theme_override_font_sizes/font_size = 13
+text = "THIS IS AN OBJECTIVE :O"
+
+[node name="Sprite2D" type="MeshInstance2D" parent="."]
+position = Vector2(48, 37)
+scale = Vector2(0.0661765, 0.0672783)
+mesh = SubResource("ArrayMesh_5jc76")
+texture = SubResource("CompressedTexture2D_meup3")
+
+[node name="Objective2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(134, 48)
+scale = Vector2(0.109375, 0.101563)
+texture = ExtResource("5_rwlj6")

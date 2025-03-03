@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://q526r7vd3inb"]
+
+[ext_resource type="Texture2D" uid="uid://b754hx4j2h1v4" path="res://Objects/VFX/Flare/T_Fireball_OuterShell_BaseColor.png" id="1_d5qci"]
+[ext_resource type="Script" uid="uid://df4hr5s8rxp7n" path="res://Objects/VFX/Flare/flareball.gd" id="1_yjwhu"]
+[ext_resource type="Texture2D" uid="uid://obthmqfbxm85" path="res://Objects/VFX/Flare/T_FlareFlicks01_n.png" id="2_yjwhu"]
+[ext_resource type="Texture2D" uid="uid://difi76573jdkf" path="res://Objects/VFX/Texture/smoke_effect.png" id="3_8jjuc"]
+[ext_resource type="AudioStream" uid="uid://8rj78f6140mg" path="res://Player/Sound/Hands/Flare/SW_Flare_Impact_01.wav" id="5_8jjuc"]
+[ext_resource type="AudioStream" uid="uid://xouof3gi07ie" path="res://Player/Sound/Hands/Flare/SW_Flare_Fizzle.wav" id="5_24cya"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_m3m4v"]
+albedo_texture = ExtResource("1_d5qci")
+normal_enabled = true
+normal_texture = ExtResource("2_yjwhu")
+
+[sub_resource type="SphereMesh" id="SphereMesh_bpvog"]
+material = SubResource("ORMMaterial3D_m3m4v")
+radius = 0.07
+height = 0.14
+radial_segments = 16
+rings = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lirj5"]
+transparency = 1
+albedo_texture = ExtResource("3_8jjuc")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6gdp0"]
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 0.999978
+gravity = Vector3(0, 2, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ajmnl"]
+size = Vector2(0.75, 0.75)
+orientation = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dedsw"]
+radius = 0.107165
+
+[node name="FlareBall" type="RigidBody3D" groups=["FlareBall"]]
+collision_layer = 0
+script = ExtResource("1_yjwhu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_bpvog")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_lirj5")
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_6gdp0")
+draw_pass_1 = SubResource("PlaneMesh_ajmnl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dedsw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.541176, 0, 1)
+light_energy = 2.0
+
+[node name="Fizzle" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_24cya")
+autoplay = true
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_8jjuc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

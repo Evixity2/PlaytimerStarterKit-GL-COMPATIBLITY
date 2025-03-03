@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=4 uid="uid://bca26vpymh0mn"]
+
+[ext_resource type="Script" uid="uid://usskr8k650lg" path="res://Objects/Gameplay/PullOff/Scripts/pulloff_object.gd" id="1_t05jp"]
+[ext_resource type="Script" uid="uid://d4joakp74nxnn" path="res://Objects/Gameplay/HandFunctions/hand_grab.gd" id="2_nu6jx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t05jp"]
+size = Vector3(0.7, 0.7, 0.3)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t05jp"]
+_surfaces = [{
+"aabb": AABB(-1.1, -0.3, -0.05, 2.2, 0.6, 0.1),
+"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
+"format": 34359738391,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("zcyMv5qZmb7NzEw9zcyMv5qZmb7NzEy9zcyMv5qZmT7NzEy9zcyMP5qZmb7NzEy9zcyMv5qZmb7NzEy9zcyMv5qZmb7NzEw9zcyMv5qZmT7NzEy9zcyMv5qZmb7NzEy9zcyMP5qZmb7NzEy9zcyMv5qZmT7NzEy9zcyMv5qZmT7NzEw9zcyMv5qZmb7NzEw9zcyMv5qZmb7NzEw9zcyMv5qZmT7NzEw9zcyMP5qZmT7NzEw9zcyMP5qZmT7NzEw9zcyMv5qZmT7NzEw9zcyMv5qZmT7NzEy9zcyMv5qZmb7NzEw9zcyMP5qZmb7NzEw9zcyMP5qZmb7NzEy9zcyMP5qZmT7NzEw9zcyMP5qZmb7NzEw9zcyMv5qZmb7NzEw9zcyMP5qZmb7NzEy9zcyMP5qZmb7NzEw9zcyMP5qZmT7NzEw9zcyMP5qZmb7NzEy9zcyMP5qZmT7NzEy9zcyMv5qZmT7NzEy9zcyMv5qZmT7NzEy9zcyMP5qZmT7NzEy9zcyMP5qZmT7NzEw9zcyMP5qZmT7NzEw9zcyMP5qZmT7NzEy9zcyMP5qZmb7NzEy9AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nu6jx"]
+size = Vector3(2.2, 0.6, 0.1)
+
+[node name="PullablePlank" type="RigidBody3D"]
+script = ExtResource("1_t05jp")
+
+[node name="HandGrab" type="Area3D" parent="." node_paths=PackedStringArray("grab_marker")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, 0)
+script = ExtResource("2_nu6jx")
+update_every_frame = true
+grab_animation = "handle"
+grab_marker = NodePath("HandPositionMarker")
+only_usable_by = 1
+metadata/_custom_type_script = "uid://d4joakp74nxnn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HandGrab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500001, 0, 0)
+shape = SubResource("BoxShape3D_t05jp")
+
+[node name="HandPositionMarker" type="Marker3D" parent="HandGrab"]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0.2, 0, 0.0606245)
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, 0)
+mesh = SubResource("ArrayMesh_t05jp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, 0)
+shape = SubResource("BoxShape3D_nu6jx")

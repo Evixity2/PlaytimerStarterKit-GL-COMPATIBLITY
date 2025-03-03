@@ -1,0 +1,275 @@
+[gd_scene load_steps=21 format=3 uid="uid://wted730xx6x5"]
+
+[ext_resource type="Texture2D" uid="uid://dgnbram6dypqw" path="res://Interface/Inventory/Texture/T_InventoryBG.png" id="1_i84y4"]
+[ext_resource type="FontFile" uid="uid://b15pnbjgpussj" path="res://Interface/Font/NotoSansJP-VariableFont_wght.ttf" id="2_x0yxn"]
+[ext_resource type="Theme" uid="uid://dk0tum6xf51mt" path="res://Interface/Inventory/Themes/inventory_tab_button.tres" id="3_e305e"]
+[ext_resource type="Texture2D" uid="uid://cmgwr872ee2j0" path="res://Interface/Inventory/Texture/T_KeyItems.png" id="4_lycpx"]
+[ext_resource type="Texture2D" uid="uid://dbs0qts3pfgg2" path="res://Interface/Inventory/Texture/T_VHSTapes.png" id="6_ah56o"]
+[ext_resource type="Texture2D" uid="uid://bx5qulnnkgbh6" path="res://Interface/Inventory/Texture/T_Notes.png" id="7_iybea"]
+[ext_resource type="Texture2D" uid="uid://e3cx3g68q8ck" path="res://Interface/Inventory/Texture/T_Equipment.png" id="8_vkm2n"]
+[ext_resource type="FontFile" uid="uid://dp3oq0ou16joq" path="res://Interface/Font/VCR_OSD_MONO_1.001.ttf" id="9_mtdyh"]
+[ext_resource type="Texture2D" uid="uid://334aj5uxiovb" path="res://Interface/Inventory/ItemIcons/vhs.png" id="10_f5303"]
+[ext_resource type="AudioStream" uid="uid://41gw4esu1lc3" path="res://Interface/MainMenu/Sound/SW_SFX_Modal_PopUp.wav" id="12_42dg6"]
+[ext_resource type="AudioStream" uid="uid://d1u6111mtf4qu" path="res://Interface/MainMenu/Sound/SW_SFX_Closing_Menu.wav" id="13_kgpdl"]
+[ext_resource type="AudioStream" uid="uid://c7wgcc6jimvtc" path="res://Interface/MainMenu/Sound/SW_SFX_Menu_Forward.wav" id="14_iwa01"]
+[ext_resource type="AudioStream" uid="uid://40v5446yti4l" path="res://Interface/Inventory/Sound/SW_SFX_Inventory_SwitchTabs_01.wav" id="15_d17gp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yum3l"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7jyv"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 0.392157)
+corner_radius_top_right = 345
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2otjx"]
+color = Color(1, 1, 1, 0.392157)
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_inh12"]
+color = Color(0.341176, 0.819608, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wr453"]
+color = Color(0.341176, 0.819608, 1, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_l5vf3"]
+color = Color(0.341176, 0.819608, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 6
+vertical = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_urmaw"]
+size = Vector2(1, -1)
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.764706)
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i84y4")
+expand_mode = 1
+
+[node name="Tabs" type="Node2D" parent="."]
+position = Vector2(62, 55)
+scale = Vector2(0.75, 0.75)
+
+[node name="Q" type="Label" parent="Tabs"]
+offset_top = 1.0
+offset_right = 149.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_x0yxn")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_yum3l")
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keys" type="Button" parent="Tabs"]
+offset_left = 157.0
+offset_right = 232.0
+offset_bottom = 75.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_e305e")
+icon = ExtResource("4_lycpx")
+expand_icon = true
+
+[node name="VHS" type="Button" parent="Tabs"]
+modulate = Color(1, 1, 1, 0.392157)
+offset_left = 240.0
+offset_right = 315.0
+offset_bottom = 75.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_e305e")
+icon = ExtResource("6_ah56o")
+expand_icon = true
+
+[node name="Notes" type="Button" parent="Tabs"]
+modulate = Color(1, 1, 1, 0.392157)
+offset_left = 323.0
+offset_right = 398.0
+offset_bottom = 75.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_e305e")
+icon = ExtResource("7_iybea")
+expand_icon = true
+
+[node name="Equipment" type="Button" parent="Tabs"]
+modulate = Color(1, 1, 1, 0.392157)
+offset_left = 406.0
+offset_top = 1.0
+offset_right = 481.0
+offset_bottom = 76.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_e305e")
+icon = ExtResource("8_vkm2n")
+expand_icon = true
+
+[node name="E" type="Label" parent="Tabs"]
+offset_left = 489.0
+offset_top = 1.0
+offset_right = 619.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_x0yxn")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_l7jyv")
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleSeperator" type="HSeparator" parent="Tabs"]
+offset_left = 620.0
+offset_top = 72.0
+offset_right = 1369.0
+offset_bottom = 76.0
+theme_override_styles/separator = SubResource("StyleBoxLine_2otjx")
+
+[node name="TitleSeperator2" type="HSeparator" parent="Tabs"]
+offset_top = 679.0
+offset_right = 1369.0
+offset_bottom = 708.0
+theme_override_styles/separator = SubResource("StyleBoxLine_2otjx")
+
+[node name="TabIndecator" type="HSeparator" parent="Tabs"]
+offset_left = 157.0
+offset_top = 76.0
+offset_right = 232.0
+offset_bottom = 91.0
+theme_override_styles/separator = SubResource("StyleBoxLine_inh12")
+
+[node name="back" type="Label" parent="Tabs"]
+offset_left = 1181.0
+offset_top = 708.0
+offset_right = 1369.0
+offset_bottom = 771.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_x0yxn")
+theme_override_font_sizes/font_size = 31
+text = "TAB - Exit"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="read" type="Label" parent="Tabs"]
+offset_left = 992.0
+offset_top = 708.0
+offset_right = 1180.0
+offset_bottom = 771.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_x0yxn")
+theme_override_font_sizes/font_size = 31
+text = "R - Read Note"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="section" type="Node2D" parent="."]
+position = Vector2(0, 109)
+
+[node name="HSeparator" type="HSeparator" parent="section"]
+offset_top = 82.0
+offset_right = 376.0
+offset_bottom = 86.0
+theme_override_styles/separator = SubResource("StyleBoxLine_wr453")
+
+[node name="title" type="Label" parent="section"]
+offset_top = 19.0
+offset_right = 375.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.341176, 0.819608, 1, 1)
+theme_override_colors/font_outline_color = Color(0.341176, 0.819608, 1, 1)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_x0yxn")
+theme_override_font_sizes/font_size = 46
+text = "audio"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="decription" type="Label" parent="section"]
+offset_left = 673.0
+offset_top = 421.0
+offset_right = 1108.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("9_mtdyh")
+theme_override_font_sizes/font_size = 18
+text = "This is a description
+This is a description"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Selected" type="VSeparator" parent="section"]
+offset_left = 156.0
+offset_top = 104.0
+offset_right = 166.0
+offset_bottom = 143.0
+theme_override_styles/separator = SubResource("StyleBoxLine_l5vf3")
+
+[node name="item_image" type="MeshInstance2D" parent="section"]
+position = Vector2(890.5, 214)
+scale = Vector2(435, 403.75)
+mesh = SubResource("QuadMesh_urmaw")
+texture = ExtResource("10_f5303")
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_42dg6")
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_kgpdl")
+
+[node name="Press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_iwa01")
+
+[node name="Switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_d17gp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 76
+text = "THIS MENU
+ AIN'T FINISHED YET :["
