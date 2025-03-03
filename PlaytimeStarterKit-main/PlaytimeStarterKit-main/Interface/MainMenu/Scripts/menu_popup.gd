@@ -27,6 +27,7 @@ func remove():
 
 func yes():
 	prompt_result.emit(true)
+	remove()
 func no():
 	prompt_result.emit(false)
 	remove()

@@ -4,6 +4,7 @@ extends Control
 @onready var current = $buttons/Current
 @onready var defualt = $buttons/defualt
 @onready var menu_popup = $"../../menu_popup"
+@onready var none = $None
 
 const LOADGAMEBUTTON = preload("res://Interface/Loading/LoadGameMenu/loadgamebutton.tscn")
 
@@ -13,7 +14,11 @@ func _ready():
 func load_menu():
 	visible = true
 	current.visible = false
-	if not Game.saves.size() > 0: return
+	if not Game.saves.size() > 0:
+		none.visible = true
+		return
+	else:
+		none.visible = false
 	var y_offset = 0.0
 	for i in Game.saves.size():
 		var new_button = LOADGAMEBUTTON.instantiate()

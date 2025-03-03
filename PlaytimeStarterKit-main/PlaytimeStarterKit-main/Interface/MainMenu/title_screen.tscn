@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dtp3lixj6uyxo"]
+[gd_scene load_steps=35 format=3 uid="uid://dtp3lixj6uyxo"]
 
 [ext_resource type="Script" uid="uid://id7iagt8fncx" path="res://Interface/MainMenu/Scripts/title_screen.gd" id="1_dj2vu"]
 [ext_resource type="FontFile" uid="uid://dp3oq0ou16joq" path="res://Interface/Font/VCR_OSD_MONO_1.001.ttf" id="2_dj2vu"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://d02ndr1cfnfix" path="res://Interface/MainMenu/Sound/buttonSFX.gd" id="12_6wysa"]
 [ext_resource type="Script" uid="uid://cram086kryr7c" path="res://Interface/MainMenu/Scripts/menu_popup.gd" id="13_txout"]
 [ext_resource type="Texture2D" uid="uid://ba641twe6vsbv" path="res://Interface/MainMenu/Texture/T_PauseBG.png" id="13_wi7c2"]
+[ext_resource type="PackedScene" uid="uid://wted730xx6x5" path="res://Interface/Settings/settings_menu.tscn" id="14_2834n"]
 [ext_resource type="Theme" uid="uid://bsmuhrjx0b4k2" path="res://Interface/MainMenu/Themes/prompt_button.tres" id="14_fi64f"]
 [ext_resource type="PackedScene" uid="uid://c0igyvhisp714" path="res://Interface/Loading/LoadGameMenu/load_game.tscn" id="15_o37xk"]
 [ext_resource type="AudioStream" uid="uid://ilcdsxfj7o2g" path="res://Interface/MainMenu/Music/ch4TitleMusic.mp3" id="16_xtj4b"]
@@ -296,7 +297,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_s6w10")
-screens = Array[NodePath]([NodePath("PlaytimeStarter"), NodePath("Warning")])
 
 [node name="PlaytimeStarter" type="Node2D" parent="BeforeIntroScreens"]
 visible = false
@@ -411,7 +411,7 @@ offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 12
-text = "Created by @DetectivePikaC2 / Derective on youtube"
+text = "Created by [Your Name / Username]"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -431,8 +431,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_dj2vu")
 theme_override_font_sizes/font_size = 49
-text = "POPPY
-PLAYTIME"
+text = "YOUR
+LOGO"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -589,6 +589,11 @@ metadata/_custom_type_script = "uid://d02ndr1cfnfix"
 [node name="LoadGame" parent="menu" instance=ExtResource("15_o37xk")]
 visible = false
 layout_mode = 1
+
+[node name="SettingsMenu" parent="menu" instance=ExtResource("14_2834n")]
+visible = false
+layout_mode = 1
+menu_popup = NodePath("../../menu_popup")
 
 [node name="menu_popup" type="Control" parent="."]
 visible = false

@@ -7,6 +7,7 @@ extends Control
 @onready var music = $MenuMusic/Music
 @onready var render_bg = $menu/RenderBG
 @onready var load_game = $menu/LoadGame
+@onready var settings_menu = $menu/SettingsMenu
 
 var ch4blue_hex = "69dbff"
 
@@ -41,7 +42,7 @@ func _on_load_pressed():
 	load_game.toggle()
 
 func _on_settings_pressed():
-	pass
+	settings_menu.toggle()
 
 func _on_credits_pressed():
 	Game._load_no_screen("res://Interface/Credits/credits.tscn")

@@ -68,6 +68,19 @@ horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true
 
+[node name="None" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_yk4jq")
+theme_override_font_sizes/font_size = 30
+text = "No saves"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="Seperator" type="HSeparator" parent="."]
 layout_mode = 0
 offset_top = 100.0

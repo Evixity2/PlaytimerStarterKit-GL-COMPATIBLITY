@@ -16,8 +16,12 @@ func _ready():
 
 func play_screens():
 	current_idx = -1
-	animation_player.play("Delay")
+	if screens.size() < 1:
+		await get_tree().create_timer(0.1).timeout
+		finshed.emit()
+		return
 	menu_transition.play("transition")
+	animation_player.play("Delay")
 
 func load_next():
 	if current_screen:

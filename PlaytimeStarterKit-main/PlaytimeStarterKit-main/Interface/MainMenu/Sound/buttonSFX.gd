@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	#connect signals to sfx
 	install_sounds(get_node(root_path))
-
+ #or i is MenuButton or i is CheckButton
 
 func install_sounds(node: Node) -> void:
 	for i in node.get_children():

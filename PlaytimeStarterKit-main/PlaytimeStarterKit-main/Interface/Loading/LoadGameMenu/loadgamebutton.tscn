@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://blbde3nsukjhl"]
+[gd_scene load_steps=6 format=3 uid="uid://blbde3nsukjhl"]
 
 [ext_resource type="Theme" uid="uid://c3y4p2f8djdyb" path="res://Interface/MainMenu/Themes/title_button.tres" id="1_y51hu"]
 [ext_resource type="Script" uid="uid://cxowskoo66nfw" path="res://Interface/Loading/LoadGameMenu/load_game_button.gd" id="2_0lp7s"]
@@ -18,9 +18,6 @@ _surfaces = [{
 "vertex_count": 4,
 "vertex_data": PackedByteArray(0, 0, 110, 196, 0, 64, 245, 195, 0, 0, 110, 196, 0, 64, 245, 67, 0, 0, 110, 68, 0, 64, 245, 67, 0, 0, 110, 68, 0, 64, 245, 195)
 }]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_meup3"]
-load_path = "res://.godot/imported/Chase.png-f8b2d889d0f3f0f70ce64a60a130ec0d.ctex"
 
 [node name="Load" type="Button"]
 offset_left = 326.0
@@ -54,7 +51,6 @@ text = "THIS IS AN OBJECTIVE :O"
 position = Vector2(48, 37)
 scale = Vector2(0.0661765, 0.0672783)
 mesh = SubResource("ArrayMesh_5jc76")
-texture = SubResource("CompressedTexture2D_meup3")
 
 [node name="Objective2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)
