@@ -32,8 +32,6 @@ func _input(_event):
 			inventory.load_section("Keys", keys)
 		else:
 			close_inv.play()
-	if Input.is_action_just_pressed("exit"):
-		Game.load_scene("res://Interface/MainMenu/title_screen.tscn")
 
 func new_objective(objective: String):
 	obj_msg.text = objective

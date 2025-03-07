@@ -6,7 +6,7 @@ class_name ObjectiveTrigger
 @export var objective_title: String = ""
 
 func _ready():
-	get_parent().connect(objective_title, Callable(objective))
+	get_parent().connect(signal_name, Callable(objective))
 
 func objective():
 	Game.set_objective(objective_title)

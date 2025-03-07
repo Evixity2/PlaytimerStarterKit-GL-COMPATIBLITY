@@ -297,6 +297,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_s6w10")
+screens = Array[NodePath]([NodePath("PlaytimeStarter"), NodePath("Warning")])
 
 [node name="PlaytimeStarter" type="Node2D" parent="BeforeIntroScreens"]
 visible = false
@@ -589,6 +590,7 @@ metadata/_custom_type_script = "uid://d02ndr1cfnfix"
 [node name="LoadGame" parent="menu" instance=ExtResource("15_o37xk")]
 visible = false
 layout_mode = 1
+menu_popup_path = NodePath("../../menu_popup")
 
 [node name="SettingsMenu" parent="menu" instance=ExtResource("14_2834n")]
 visible = false

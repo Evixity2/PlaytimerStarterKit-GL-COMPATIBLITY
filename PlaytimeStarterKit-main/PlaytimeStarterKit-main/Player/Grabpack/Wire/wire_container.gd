@@ -69,11 +69,8 @@ func add_segment(previous, next, point):
 	return new_segment
 
 func remove_segment(segment, previous, last):
-	var set_last: bool = true
 	if previous is Area3D:
 		previous.next_node = last
-	if not last is Marker3D:
-		set_last = false
 	if last is Area3D:
 		last.origin_node = previous
 		last_segment = previous

@@ -25,6 +25,8 @@ func update_all_visual():
 	camera_sense.value = GameSettings.fov
 	toggle_sprint.button_pressed = GameSettings.toggle_sprint
 	toggle_crouch.button_pressed = GameSettings.toggle_crouch
+	window_mode.selected = GameSettings.window_mode
+	vsync.button_pressed = GameSettings.vsync
 	show_fps.button_pressed = GameSettings.show_fps
 	fov.value = GameSettings.fov
 	main_volume.value = GameSettings.main_volume
@@ -33,6 +35,8 @@ func reset_to_defualts():
 	GameSettings.camera_sens = 50
 	GameSettings.toggle_sprint = false
 	GameSettings.toggle_crouch = false
+	GameSettings.window_mode = 0
+	GameSettings.vsync = false
 	GameSettings.show_fps = false
 	GameSettings.fov = 75
 	GameSettings.main_volume = 100
@@ -45,7 +49,7 @@ func reset_to_defualts():
 	
 	update_all_visual()
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if settings_menu.visible and Input.is_action_just_pressed("reset"):
 		var result = await settings_menu.get_node(settings_menu.menu_popup).prompt("Reset To Defualts", "This will reset all settings to their defualt value.")
 		if result:
@@ -67,11 +71,13 @@ func window_mode_changed(index):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	elif index == 2:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	GameSettings.window_mode = index
 func vsync_toggled(toggled_on):
 	if toggled_on:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	GameSettings.vsync = toggled_on
 func show_fps_toggled(toggled_on):
 	GameSettings.show_fps = toggled_on
 func fov_changed(value):

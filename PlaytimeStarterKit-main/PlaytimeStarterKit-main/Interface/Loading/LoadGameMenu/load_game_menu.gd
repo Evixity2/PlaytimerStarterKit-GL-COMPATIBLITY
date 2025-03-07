@@ -1,15 +1,18 @@
 extends Control
 
+@export var menu_popup_path: NodePath
+
 @onready var buttons = $buttons
 @onready var current = $buttons/Current
 @onready var defualt = $buttons/defualt
-@onready var menu_popup = $"../../menu_popup"
+var menu_popup: Control = null
 @onready var none = $None
 
 const LOADGAMEBUTTON = preload("res://Interface/Loading/LoadGameMenu/loadgamebutton.tscn")
 
 func _ready():
 	unload_menu()
+	menu_popup = get_node(menu_popup_path)
 
 func load_menu():
 	visible = true
