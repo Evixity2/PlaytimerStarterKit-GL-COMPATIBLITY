@@ -4,6 +4,7 @@ extends Node3D
 @onready var ray_cast_3d = $"../../../Neck/RayCast3D"
 @onready var direction_cast = $DirectionCast
 @onready var air_grab_point = $"../../../Neck/AirGrabPoint"
+@onready var player: CharacterBody3D = $"../../.."
 
 @onready var hand_pos = $"../LayerWalk/ArmLeft/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack/LayerShoot/HandAttach/HandPos"
 @onready var hand_fake = $"../LeftHandFake"
@@ -69,6 +70,17 @@ func _process(delta):
 					sound_manager.cable_sound(false, false)
 				if quick_retract:
 					timer.start()
+				
+				if hand_changed_point or not direction_cast.is_colliding(): return
+				play_animation("straight")
+				var target_normal = direction_cast.get_collision_normal()
+				if target_normal.dot(Vector3.UP) > 0.001 or target_normal.y < 0:
+					if target_normal.y > 0:
+						rotation_degrees.x = -90
+					elif target_normal.y < 0:
+							rotation_degrees.x = 90
+				else:
+					look_at(global_position - target_normal)
 		
 		if hand_reached_point:
 			if not hand_grab_point == position:
@@ -101,7 +113,7 @@ func _process(delta):
 
 func sort_hand_use():
 	if hand_attached:
-		if grabpack.grabpack_lowered: return
+		if grabpack.grabpack_lowered or not player.movable: return
 		launch_hand()
 	elif not hand_retracting:
 		if holding_object:

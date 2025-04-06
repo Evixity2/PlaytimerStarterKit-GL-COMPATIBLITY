@@ -4,12 +4,20 @@ extends Node3D
 
 @export var hand_scene: PackedScene
 @export var play_collect_sound: bool = true
+@export var hand_index: int = -1
+@export var replace_hand_at_index: bool = false
+
+signal collected
 
 func collect():
 	hand_grab.release_grabbed()
 	if play_collect_sound:
 		Grabpack.player.sound_manager.collect()
-	Grabpack.add_hand(hand_scene)
+	if hand_index < 0: Grabpack.add_hand(hand_scene)
+	else: 
+		if replace_hand_at_index: Grabpack.remove_hand_index(hand_index, false, false)
+		Grabpack.add_hand(hand_scene, hand_index)
+	collected.emit()
 	
 	queue_free()
 

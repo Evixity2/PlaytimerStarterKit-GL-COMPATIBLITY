@@ -11,13 +11,12 @@ extends CharacterBody3D
 @export var flashlight_togglable: bool = false
 @export var start_lowered: bool = false
 #0 is no grabpack, and numbers 1 and 2 are grabpack versions 1 and 2.
-@export_range(0, 2) var starting_grabpack: int = 0
-@export var load_previous_player_hands: bool = false
+@export_range(0, 3) var starting_grabpack: int = 0
 @export var enabled_hands: Array [PackedScene] = [preload("res://Player/Grabpack/Hands/none.tscn")]
 
 @export_category("Player")
 var speed: float = 10 # m/s
-var acceleration: float = 60 # m/s^2
+var acceleration: float = 40 # m/s^2
 
 var normal_speed: float = 4.0
 var sprint_speed: float = 6.0
@@ -182,6 +181,9 @@ func _physics_process(delta: float) -> void:
 	
 	#Handle Flashlight
 	flashlight_node.visible = flashlight
+	
+	#Settings Update:
+	camera.fov = GameSettings.fov
 
 func capture_mouse(capture_mode: bool) -> void:
 	if capture_mode:

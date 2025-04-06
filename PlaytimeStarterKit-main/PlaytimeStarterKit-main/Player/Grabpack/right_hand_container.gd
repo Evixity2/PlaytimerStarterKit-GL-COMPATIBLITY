@@ -52,6 +52,7 @@ var hand_hold_time: float = 0.0
 var pulling: bool = false
 var wire_unwrap: bool = true
 var wire_wrap: bool = true
+var awaiting_switch: bool = false
 
 var retract_type = false
 var hand_speed: float = 35.0
@@ -64,6 +65,11 @@ func _ready():
 	set_hand(0)
 
 func _process(delta):
+	if awaiting_switch and hand_attached:
+		current_hand = -1
+		if grabpack.current_grabpack == 1: switch_hand(0, hand_queue)
+		else: switch_hand(1, hand_queue)
+		awaiting_switch = false
 	if holding_object:
 		if Input.is_action_pressed("handright"):
 			hand_hold_time += 1.0 * delta
@@ -99,6 +105,17 @@ func _process(delta):
 				#Send Signals
 				if hand_send_signals:
 					hand_signal_connector.emit_signal("hand_reached_target")
+				
+				if hand_changed_point or not direction_cast.is_colliding(): return
+				play_animation("straight")
+				var target_normal = direction_cast.get_collision_normal()
+				if target_normal.dot(Vector3.UP) > 0.001 or target_normal.y < 0:
+					if target_normal.y > 0:
+						rotation_degrees.x = -90
+					elif target_normal.y < 0:
+							rotation_degrees.x = 90
+				else:
+					look_at(global_position - target_normal)
 		
 		if hand_reached_point:
 			if not hand_grab_point == position:
@@ -135,9 +152,9 @@ func _process(delta):
 	
 	if not holding_object:
 		if Input.is_action_just_pressed("hand_up"):
-			switch_hand(1, current_hand + 1)
+			if queue_test(current_hand+1): switch_hand(1, current_hand + 1)
 		elif Input.is_action_just_pressed("hand_down"):
-			switch_hand(1, current_hand - 1)
+			if queue_test(current_hand-1): switch_hand(1, current_hand - 1)
 
 func _input(event: InputEvent) -> void:
 	if not holding_object:
@@ -145,13 +162,22 @@ func _input(event: InputEvent) -> void:
 			if event.keycode >= KEY_0 and event.keycode <= KEY_9:
 				var switch_num: int = -1
 				switch_num = event.keycode - KEY_0 # Convert keycode to number
-				switch_hand(1, switch_num-1)
+				if queue_test(switch_num-1): switch_hand(1, switch_num-1)
 
+func queue_test(hand_index: int):
+	var test_queue: int = hand_index
+	if test_queue < 0:
+		test_queue = 0
+	if test_queue > hands.size()-1:
+		test_queue = hands.size()-1
+	if test_queue == current_hand:
+		return false
+	return true
 func sort_hand_use():
 	if not hand_useless:
 		if fire_mode_launch:
 			if hand_attached:
-				if grabpack.grabpack_lowered: return
+				if grabpack.grabpack_lowered or not player.movable: return
 				launch_hand()
 				
 				#Send Signals
@@ -217,17 +243,13 @@ func retract_hand():
 
 func switch_hand(type: int, new_hand: int):
 		#MAKE SURE THE HAND IS ATTACHED
-		if not hand_attached:
-			return
-		if not grabpack.grabpack_switchable_hands:
-			return
+		if not hand_attached: return
 		
 		queue_hand(new_hand)
-		if hand_queue == current_hand:
-			return
 		if type == 0:
 			switch_animation.play("CollectSwitch")
 		elif type == 1:
+			if not grabpack.grabpack_switchable_hands: return
 			switch_animation.play("ScrewSwitch")
 
 #HAND DATA
@@ -263,6 +285,15 @@ func queue_hand(hand_index: int):
 		hand_queue = 0
 	if hand_queue > hands.size()-1:
 		hand_queue = hands.size()-1
+func queue_hand_switch(hand_index: int):
+	hand_queue = hand_index
+	
+	if hand_queue < 0:
+		hand_queue = 0
+	if hand_queue > hands.size()-1:
+		hand_queue = hands.size()-1
+	
+	awaiting_switch = true
 
 func play_animation(anim_name: String):
 	if not hand_uses_animations:

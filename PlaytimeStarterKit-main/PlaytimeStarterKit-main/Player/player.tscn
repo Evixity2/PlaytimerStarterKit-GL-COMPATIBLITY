@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=4 uid="uid://dkty77argxwyc"]
+[gd_scene load_steps=170 format=4 uid="uid://dkty77argxwyc"]
 
 [ext_resource type="Texture2D" uid="uid://cl7alwgeec33w" path="res://Player/Grabpack/Models/grabpack_chapter_3_-_poppy_playtime_0.png" id="1_00tjw"]
 [ext_resource type="Script" uid="uid://dkgdss1i1qci7" path="res://Player/player.gd" id="1_od3ui"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dvp8vrn72f6i" path="res://Player/Grabpack/Models/grabpack_chapter_3_-_poppy_playtime_2.png" id="3_apopc"]
 [ext_resource type="PackedScene" uid="uid://b5hqdrggpb7dw" path="res://Player/Grabpack/Grabpacks/grabpack_one.tscn" id="4_ie76m"]
 [ext_resource type="PackedScene" uid="uid://b6jjiwvgofq7d" path="res://Player/Grabpack/Grabpacks/grabpack_two.tscn" id="5_ie76m"]
+[ext_resource type="PackedScene" uid="uid://baopxxyawgnob" path="res://Player/Grabpack/Grabpacks/grabpack_three.tscn" id="6_soeee"]
 [ext_resource type="Texture2D" uid="uid://inhgvawo2ubt" path="res://Player/Grabpack/Models/Hands/T_BlueHand_BC.png" id="10_7x5p2"]
 [ext_resource type="Script" uid="uid://6a1qq5wdt3ff" path="res://Player/Grabpack/left_hand_container.gd" id="10_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://djaph3pqt6xig" path="res://Player/Grabpack/Models/Hands/T_BlueHand_Nt.png" id="11_6eb1q"]
@@ -31,7 +32,6 @@
 [ext_resource type="AudioStream" uid="uid://cqftuiatom5ct" path="res://Player/Sound/Grabpack/SW_Grabpack_HandRetract_01.wav" id="27_f4lon"]
 [ext_resource type="AudioStream" uid="uid://bexmsh6hmw8c0" path="res://Player/Sound/Grabpack/SW_Grabpack_HandRetract_02.wav" id="28_8ynux"]
 [ext_resource type="AudioStream" uid="uid://cuomj2rfod7lc" path="res://Player/Sound/Grabpack/SW_Grabpack_HandRetract_03.wav" id="29_d30e8"]
-[ext_resource type="AudioStream" uid="uid://6mcjjdxd02d3" path="res://Player/Sound/Grabpack/SW_Grabpack_SwitchHands_02.wav" id="30_6pogt"]
 [ext_resource type="AudioStream" uid="uid://btnuqpk4s6kpe" path="res://Player/Sound/Movement/Metal/run1.wav" id="30_wvbyc"]
 [ext_resource type="AudioStream" uid="uid://ddv2r81gj4w5h" path="res://Player/Sound/Grabpack/SW_Grabpack_RopeSwing_01.wav" id="31_ie76m"]
 [ext_resource type="AudioStream" uid="uid://b673wed8myb10" path="res://Player/Sound/Grabpack/SW_Grabpack_RopeSwing_02.wav" id="32_dy65m"]
@@ -47,9 +47,12 @@
 [ext_resource type="AudioStream" uid="uid://dj4y26gm5d6ue" path="res://Player/Sound/Movement/Sidle/SW_SFX_Player_Sidling_Shuffle_02.wav" id="42_6eb1q"]
 [ext_resource type="AudioStream" uid="uid://cbwmsvpeyy46p" path="res://Player/Sound/Movement/Sidle/SW_SFX_Player_Sidling_Shuffle_03.wav" id="43_wvbyc"]
 [ext_resource type="AudioStream" uid="uid://bhaf70sbwjn68" path="res://Player/Sound/Grabpack/SW_Grabpack_SwitchHands_01.wav" id="44_7x5p2"]
+[ext_resource type="AudioStream" uid="uid://c8blvg2tgohf" path="res://Player/Sound/Grabpack/hand_switch_sound.wav" id="44_lgaa7"]
 [ext_resource type="AudioStream" uid="uid://c7rdq8ypp0lks" path="res://Player/Sound/Inventory/item_grab_v3.wav" id="45_1kmt7"]
 [ext_resource type="AudioStream" uid="uid://je6p8sf07015" path="res://Player/Sound/Grabpack/SW_SFX_Inventory_SwitchTabs_03.wav" id="46_lgaa7"]
 [ext_resource type="FontFile" uid="uid://b15pnbjgpussj" path="res://Interface/Font/NotoSansJP-VariableFont_wght.ttf" id="47_6rl0i"]
+[ext_resource type="AudioStream" uid="uid://c3ihq6e51p4xw" path="res://Player/Sound/Grabpack/SW_Jingle_Grabpack2_Obtain.wav" id="48_qns6m"]
+[ext_resource type="AudioStream" uid="uid://l5q40iypyf78" path="res://Player/Sound/Grabpack/SFX puzzle complete sfx.mp3" id="49_fatyj"]
 [ext_resource type="AudioStream" uid="uid://bw0dntgx8r73d" path="res://Interface/Sound/SW_NewObjective.wav" id="49_wvbyc"]
 [ext_resource type="AudioStream" uid="uid://d3tt8btvtapd3" path="res://Interface/Sound/SW_TooltipIndicator.wav" id="50_gvnt1"]
 [ext_resource type="Texture2D" uid="uid://cg8fpx4l4o3mk" path="res://Interface/Loading/T_SavingIcon.png" id="51_f8nak"]
@@ -59,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dgnbram6dypqw" path="res://Interface/Inventory/Texture/T_InventoryBG.png" id="54_68syb"]
 [ext_resource type="Script" uid="uid://ciypk2nb1tttc" path="res://Interface/Inventory/Scripts/inventory_button.gd" id="55_kdg72"]
 [ext_resource type="Texture2D" uid="uid://cmgwr872ee2j0" path="res://Interface/Inventory/Texture/T_KeyItems.png" id="55_qas3k"]
+[ext_resource type="PackedScene" uid="uid://co8610op5cecn" path="res://Interface/Wheel/selection_wheel.tscn" id="56_fatyj"]
 [ext_resource type="Texture2D" uid="uid://bx5qulnnkgbh6" path="res://Interface/Inventory/Texture/T_Notes.png" id="56_ntwt4"]
 [ext_resource type="Texture2D" uid="uid://dbs0qts3pfgg2" path="res://Interface/Inventory/Texture/T_VHSTapes.png" id="57_kdg72"]
 [ext_resource type="AudioStream" uid="uid://41gw4esu1lc3" path="res://Interface/MainMenu/Sound/SW_SFX_Modal_PopUp.wav" id="58_ntwt4"]
@@ -68,6 +72,7 @@
 [ext_resource type="AudioStream" uid="uid://d1u6111mtf4qu" path="res://Interface/MainMenu/Sound/SW_SFX_Closing_Menu.wav" id="63_68syb"]
 [ext_resource type="AudioStream" uid="uid://c7wgcc6jimvtc" path="res://Interface/MainMenu/Sound/SW_SFX_Menu_Forward.wav" id="64_x0uyb"]
 [ext_resource type="AudioStream" uid="uid://40v5446yti4l" path="res://Interface/Inventory/Sound/SW_SFX_Inventory_SwitchTabs_01.wav" id="65_68syb"]
+[ext_resource type="Texture2D" uid="uid://ba641twe6vsbv" path="res://Interface/MainMenu/Texture/T_PauseBG.png" id="65_lfyh2"]
 [ext_resource type="Script" uid="uid://ctiwownyjmlkt" path="res://Player/Grabpack/hook_controller.gd" id="67_x0uyb"]
 [ext_resource type="PackedScene" uid="uid://dgwhev5imypr8" path="res://Interface/Pause/pause.tscn" id="68_pqfba"]
 
@@ -1571,6 +1576,110 @@ _data = {
 &"start_fall": SubResource("Animation_ac8n6")
 }
 
+[sub_resource type="Animation" id="Animation_t7sh4"]
+resource_name = "EnterWatch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LayerWalk/ArmLeft/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.05, -0.001, 0), Vector3(-0.134, -0.01, 0.08), Vector3(-0.134, -0.01, 0.08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LayerWalk/ArmLeft/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0872665, 0, 0.349066), Vector3(-0.785398, 0, 0), Vector3(-0.785398, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.133333, 0.233333, 0.333333, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-7.45058e-08, -0.00318158, -0.0011967), Vector3(-0.0167595, 0.0297475, 0.0267598), Vector3(-0.0313848, 0.00973533, 0.0633531), Vector3(-0.0321252, -0.0167175, 0.0746855), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.0322464, -0.0452825, 0.085524)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.2, 0.3, 0.366667, 0.433333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.634978, -0.0676081, -0.201424), Vector3(-0.581189, -0.0562238, -0.178212), Vector3(-0.098127, -0.0863056, -0.123563), Vector3(1.7174, -0.820305, -0.602139), Vector3(1.7174, -0.820305, -0.602139), Vector3(1.7174, -0.820305, -0.602139)]
+}
+
+[sub_resource type="Animation" id="Animation_fhogf"]
+resource_name = "ExitWatch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LayerWalk/ArmLeft/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.05, -0.001, 0), Vector3(-0.134, -0.01, 0.08), Vector3(-0.134, -0.01, 0.08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LayerWalk/ArmLeft/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0872665, 0, -0.349066), Vector3(-0.785398, 0, 0), Vector3(-0.785398, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0313848, 0.00973533, 0.0633531), Vector3(-0.0321252, -0.0167175, 0.0746855), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.0322464, -0.0452825, 0.085524)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.634978, -0.0676081, -0.201424), Vector3(-0.098127, -0.0863056, -0.123563), Vector3(1.7174, -0.820305, -0.602139)]
+}
+
 [sub_resource type="Animation" id="Animation_o28un"]
 resource_name = "LowerPack"
 length = 0.5
@@ -1869,6 +1978,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7emwf"]
 _data = {
+&"EnterWatch": SubResource("Animation_t7sh4"),
+&"ExitWatch": SubResource("Animation_fhogf"),
 &"LowerPack": SubResource("Animation_o28un"),
 &"RESET": SubResource("Animation_n471f"),
 &"RaisePack": SubResource("Animation_8mwp6"),
@@ -1890,6 +2001,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -0.01), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHandContainer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_queued_hand"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_hshwv"]
@@ -1933,7 +2058,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_7emwf"]
 resource_name = "ScrewSwitch"
-length = 1.7
+length = 1.52
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1941,10 +2066,10 @@ tracks/0/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/Lay
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.3, 0.4, 0.5, 0.6, 0.733333, 0.833333, 0.933333, 1.03333, 1.1, 1.16667, 1.2, 1.33333, 1.4, 1.53333, 1.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.4, 0.5, 0.633333, 0.766663, 0.86666, 0.999997, 1.1, 1.13333, 1.26666, 1.36666, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.0167595, 0.0297475, 0.0267598), Vector3(-0.0313848, 0.00973533, 0.0633531), Vector3(-0.0321252, -0.0167175, 0.0746855), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.032268, -0.0487164, 0.0867556), Vector3(-0.032297, -0.0488498, 0.0867216), Vector3(-0.0323187, -0.0485654, 0.0862729), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(-0.0154949, -0.0167907, 0.0420621), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(0.000383094, 0.0316042, 0.000163045), Vector3(0.000383079, 0.0319243, 0.000148091), Vector3(0.000383094, 0.00181995, 0.000357188), Vector3(0.000383094, -0.00555588, 0.000395939), Vector3(0.000383094, 0.00117728, 0.000289373), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.0167595, 0.0297475, 0.0267598), Vector3(-0.0313848, 0.00973533, 0.0633531), Vector3(-0.0321252, -0.0167175, 0.0746855), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(-0.0154949, -0.0167907, 0.0420621), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(0.000383094, 0.0316042, 0.000163045), Vector3(0.000383079, 0.0319243, 0.000148091), Vector3(0.000383094, 0.00181995, 0.000357188), Vector3(0, -0.008, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1953,10 +2078,10 @@ tracks/1/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/Lay
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.233333, 0.333333, 0.4, 0.533333, 0.6, 0.733333, 0.833333, 0.933333, 1.03333, 1.1, 1.2, 1.3, 1.4, 1.46667, 1.56667, 1.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.233333, 0.333333, 0.4, 0.533333, 0.633334, 0.766663, 0.86666, 0.999997, 1.13333, 1.23333, 1.33333, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.118128, -0.0502634, -0.0500417), Vector3(-0.43235, -0.0929634, -0.148998), Vector3(-0.634978, -0.0676081, -0.201424), Vector3(-0.581189, -0.0562238, -0.178212), Vector3(-0.098127, -0.0863056, -0.123563), Vector3(1.7174, -0.820305, -0.602139), Vector3(1.38178, -2.76845, -2.78363), Vector3(1.36909, -2.79228, -2.80782), Vector3(1.37765, -2.78576, -2.80189), Vector3(1.49325, -2.24187, -2.26091), Vector3(0.742853, -0.01743, -0.0413571), Vector3(-0.164342, 0.00253918, -0.00494536), Vector3(-0.627249, 6.86368e-05, -1.83972e-09), Vector3(-0.438696, 6.86364e-05, -1.64532e-09), Vector3(0.0356342, 6.86357e-05, -1.49046e-09), Vector3(0.0180002, 6.86357e-05, -1.48976e-09), Vector3(-0.0458654, 6.86358e-05, -1.49109e-09), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.118128, -0.0502634, -0.0500417), Vector3(-0.43235, -0.0929634, -0.148998), Vector3(-0.634978, -0.0676081, -0.201424), Vector3(-0.581189, -0.0562238, -0.178212), Vector3(-0.098127, -0.0863056, -0.123563), Vector3(1.7174, -0.820305, -0.602139), Vector3(1.53641, -0.503677, -0.379676), Vector3(1.53641, -0.503677, -0.379676), Vector3(0.742853, -0.01743, -0.0413571), Vector3(-0.164342, 0.00253918, -0.00494536), Vector3(-0.349066, 0, 0), Vector3(-0.20944, 0, 0), Vector3(0.0356342, 6.86357e-05, -1.49046e-09), Vector3(0.0180002, 6.86357e-05, -1.48976e-09), Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1965,10 +2090,10 @@ tracks/2/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/Lay
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.933333, 1.26667, 1.46667, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.566667, 0.83333, 0.999997, 1.16666, 1.33333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 8.20305), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0)]
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 8.20305), Vector3(0, 3.14159, 3.14159), Vector3(0, 3.14159, 0.9163), Vector3(0, 3.14159, -0.261799), Vector3(0, 3.14159, 0.0872665), Vector3(0, 3.14159, 0)]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -1977,7 +2102,75 @@ tracks/3/path = NodePath("RightHandContainer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.733333),
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_queued_hand"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../SoundManager")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_hand"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_11wp0"]
+resource_name = "ScrewSwitch_2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack/LayerSwitch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333405, 0.133333, 0.3, 0.6, 0.833333, 0.866663, 0.999994, 1.23333, 1.53333, 1.66667, 1.96667, 2.03333, 2.1, 2.13333, 2.43333, 2.46666, 2.73333, 3, 3.03333, 3.16666, 3.4, 3.6, 3.7, 4.6, 4.73333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.008, 0), Vector3(-0.0167595, 0.0297475, 0.0267598), Vector3(-0.0313848, 0.00973533, 0.0633531), Vector3(-0.0321252, -0.0167175, 0.0746855), Vector3(0.000383094, 0.0316042, 0.000163045), Vector3(0.000383079, 0.0319243, 0.000148091), Vector3(0.000383094, 0.00181995, 0.000357188), Vector3(0, 0, 0), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(0, -0.008, 0), Vector3(-0.0313848, 0.00973533, 0.0633531), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(-0.0321252, -0.0167175, 0.0746855), Vector3(0.000383094, 0.0316042, 0.000163045), Vector3(0.000383079, 0.0319243, 0.000148091), Vector3(0.000383094, 0.00181995, 0.000357188), Vector3(0, 0, 0), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(0, -0.008, 0), Vector3(0.000383079, 0.0319243, 0.000148091), Vector3(0.000383094, 0.00181995, 0.000357188), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack/LayerSwitch:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0333405, 0, 0.0666667, 0.333333, 0.499999, 0.533333, 0.633334, 0.866663, 0.966664, 0.999997, 1.03334, 1.16667, 1.23333, 1.53333, 1.93333, 2.13333, 2.16667, 2.26667, 2.3, 2.46667, 2.53333, 2.6, 2.63333, 2.66667, 2.73333, 2.76666, 3.03333, 3.1, 3.13333, 3.36667, 3.4, 3.53333, 3.6, 3.7, 4.23334, 4.33334, 4.6, 4.7, 4.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.742853, -0.01743, -0.0413571), Vector3(0, 0, 0), Vector3(-0.118128, -0.0502634, -0.0500417), Vector3(-0.581189, -0.0562238, -0.178212), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(1.7174, -0.820305, -0.602139), Vector3(1.53641, -0.503677, -0.379676), Vector3(-0.349066, 0, 0), Vector3(-0.20944, 0, 0), Vector3(-0.164342, 0.00253918, -0.00494536), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(0, 0, 0), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(0.0356342, 6.86357e-05, -1.49046e-09), Vector3(0.742853, -0.01743, -0.0413571), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.634978, -0.0676081, -0.201424), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(-0.581189, -0.0562238, -0.178212), Vector3(-0.098127, -0.0863056, -0.123563), Vector3(-0.0322464, -0.0452825, 0.085524), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(1.7174, -0.820305, -0.602139), Vector3(0, -0.008, 0), Vector3(0, -0.008, 0), Vector3(-0.349066, 0, 0), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(-0.20944, 0, 0), Vector3(0.0180002, 6.86357e-05, -1.48976e-09), Vector3(0, 0, 0), Vector3(-0.43235, -0.0929634, -0.148998), Vector3(1.53641, -0.503677, -0.379676), Vector3(0.742853, -0.01743, -0.0413571), Vector3(-0.0301166, -0.0443088, 0.0804849), Vector3(0, -0.008, 0), Vector3(-0.349066, 0, 0), Vector3(-0.20944, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack/LayerSwitch/LayerShoot/HandAttach/HandPos:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.5, 0.566667, 0.83333, 0.999997, 1.16666, 1.33333, 1.43334, 1.50001, 1.76667, 1.93334, 2.1, 2.16667, 2.26667, 2.43334, 2.56667, 2.83334, 3.10001, 3.26667, 3.43333, 3.50001, 3.6, 3.76668, 4.03333, 4.66667, 4.83333, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 8.20305), Vector3(0, 3.14159, 2.0944), Vector3(0, 3.14159, 0.9163), Vector3(0, 3.14159, -0.261799), Vector3(0, 3.14159, 0.0872665), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 8.20305), Vector3(0, 3.14159, 2.0944), Vector3(0, 3.14159, 0.9163), Vector3(0, 3.14159, -0.261799), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(0, 3.14159, 0.0872665), Vector3(0, 3.14159, 0), Vector3(0.0356342, 6.86357e-05, -1.49046e-09), Vector3(0, 3.14159, 8.20305), Vector3(-0.00215101, 0.0136642, 0.00695057), Vector3(0, 3.14159, 0.9163), Vector3(0, 3.14159, -0.261799), Vector3(0.0356342, 6.86357e-05, -1.49046e-09), Vector3(0, 3.14159, 0.0872665), Vector3(0, 3.14159, 8.20305), Vector3(-0.634978, -0.0676081, -0.201424), Vector3(0.0180002, 6.86357e-05, -1.48976e-09), Vector3(-0.43235, -0.0929634, -0.148998), Vector3(1.53641, -0.503677, -0.379676), Vector3(0, 3.14159, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightHandContainer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.63333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -2003,7 +2196,8 @@ tracks/4/keys = {
 _data = {
 &"CollectSwitch": SubResource("Animation_gpjlu"),
 &"RESET": SubResource("Animation_hshwv"),
-&"ScrewSwitch": SubResource("Animation_7emwf")
+&"ScrewSwitch": SubResource("Animation_7emwf"),
+&"ScrewSwitch_2": SubResource("Animation_11wp0")
 }
 
 [sub_resource type="Animation" id="Animation_bbimk"]
@@ -3413,7 +3607,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1156, 239)]
+"values": [Vector2(1920, 239)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3450,10 +3644,10 @@ tracks/0/path = NodePath("tutorial:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1156, 239), Vector2(794, 239), Vector2(794, 239)]
+"values": [Vector2(1920, 239), Vector2(1400, 239), Vector2(1400, 239), Vector2(1920, 239)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3498,7 +3692,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(576, 700)]
+"values": [Vector2(960, 1200)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3586,7 +3780,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-12, -19)]
+"values": [Vector2(960, 1200)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -3614,7 +3808,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 4.5, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(576, 700), Vector2(576, 600), Vector2(576, 600), Vector2(576, 700)]
+"values": [Vector2(960, 1200), Vector2(960, 950), Vector2(960, 950), Vector2(960, 1200)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3750,13 +3944,17 @@ vertical = true
 [sub_resource type="QuadMesh" id="QuadMesh_68syb"]
 size = Vector2(1, -1)
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_soeee"]
+color = Color(0.411765, 0.858824, 1, 1)
+thickness = 2
+
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_od3ui")
 
 [node name="Grabpack" type="Node3D" parent="." groups=["Grabpack"]]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.7, 0)
 script = ExtResource("2_apopc")
-grabpacks = Array[PackedScene]([ExtResource("3_6pogt"), ExtResource("4_ie76m"), ExtResource("5_ie76m")])
+grabpacks = Array[PackedScene]([ExtResource("3_6pogt"), ExtResource("4_ie76m"), ExtResource("5_ie76m"), ExtResource("6_soeee")])
 
 [node name="Pack" type="Node3D" parent="Grabpack"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, -0.235, -0.37)
@@ -3811,8 +4009,8 @@ bones/6/name = "JNT_R_Grabpack_Gun_05"
 bones/6/parent = 5
 bones/6/rest = Transform3D(1, 0, 0, 0, 1, -7.45058e-07, 0, 7.45058e-07, 1, -0.13434, -0.080193, 0.132049)
 bones/6/enabled = true
-bones/6/position = Vector3(-0.134228, -0.0631557, 0.136584)
-bones/6/rotation = Quaternion(-0.0165456, -1.17974e-06, 1.2373e-06, 0.999863)
+bones/6/position = Vector3(-0.13334, -0.0801929, 0.131988)
+bones/6/rotation = Quaternion(0.00424936, -3.54605e-05, -1.41868e-06, 0.999991)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "JNT_R_Grabpack_Trigger_06"
 bones/7/parent = 6
@@ -3916,8 +4114,8 @@ bones/21/name = "JNT_L_Grabpack_Gun_016"
 bones/21/parent = 5
 bones/21/rest = Transform3D(1, -7.64274e-15, -8.74228e-08, 0, -1, 8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0.13434, -0.080193, 0.132049)
 bones/21/enabled = true
-bones/21/position = Vector3(0.135417, -0.0630721, 0.135952)
-bones/21/rotation = Quaternion(0.999784, -7.12141e-07, 3.42787e-05, 0.0207961)
+bones/21/position = Vector3(0.135417, -0.0800722, 0.131952)
+bones/21/rotation = Quaternion(1, 6.08175e-14, -3.17865e-08, 1.8696e-06)
 bones/21/scale = Vector3(0.999999, 0.999999, 0.999999)
 bones/22/name = "JNT_L_Grabpack_Trigger_017"
 bones/22/parent = 21
@@ -4104,10 +4302,10 @@ transform = Transform3D(-1, 8.74235e-08, -8.73988e-08, -8.74228e-08, -1, -3.7830
 [node name="Marker3D" type="Marker3D" parent="Grabpack/Pack/LayerWalk/ArmRight/LayerIdle/LayerWalk/LayerCrouch/LayerJump/LayerPack"]
 
 [node name="TubeLeft" type="Marker3D" parent="Grabpack/Pack/LayerWalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.154481, 0.729331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.052, 0.546)
 
 [node name="RightTube" type="Marker3D" parent="Grabpack/Pack/LayerWalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329859, 0.152342, 0.720771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.05, 0.538)
 
 [node name="IdleAnimation" type="AnimationPlayer" parent="Grabpack/Pack"]
 libraries = {
@@ -4150,7 +4348,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_gpjlu")
 }
 playback_default_blend_time = 0.1
-speed_scale = 1.25
+speed_scale = 1.75
 
 [node name="CanonLeftAnimation" type="AnimationPlayer" parent="Grabpack/Pack"]
 libraries = {
@@ -4422,7 +4620,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 [node name="Timer" type="Timer" parent="Grabpack/Pack/LeftHandContainer"]
 wait_time = 0.2
 one_shot = true
-ignore_time_scale = true
 
 [node name="RightHandContainer" type="Node3D" parent="Grabpack/Pack" groups=["RightHand"]]
 process_priority = 100
@@ -4449,13 +4646,12 @@ libraries = {
 }
 playback_default_blend_time = 0.1
 
-[node name="DirectionCast" type="RayCast3D" parent="Grabpack/Pack/RightHandContainer"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0935527)
-
 [node name="Timer" type="Timer" parent="Grabpack/Pack/RightHandContainer"]
 wait_time = 0.2
 one_shot = true
-ignore_time_scale = true
+
+[node name="DirectionCast" type="RayCast3D" parent="Grabpack/Pack/RightHandContainer"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0935527)
 
 [node name="LeftWireContainer" type="Node3D" parent="Grabpack/Pack" node_paths=PackedStringArray("hand_container", "wire_origin", "wire_point", "wire_fake")]
 top_level = true
@@ -4487,7 +4683,7 @@ script = ExtResource("12_8ynux")
 transform = Transform3D(1, 0, 0, 0, 0.999657, -0.0261769, 0, 0.0261769, 0.999657, 0.002, -0.235, -0.37)
 
 [node name="GrabpackMoveForward" type="Marker3D" parent="Grabpack"]
-transform = Transform3D(1, 0, 0, 0, 0.999848, 0.0174524, 0, -0.0174524, 0.999848, 0.002, -0.211412, -0.306085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, -0.211412, -0.306085)
 
 [node name="GrabpackMoveBack" type="Marker3D" parent="Grabpack"]
 transform = Transform3D(1, 0, 0, 0, 0.998135, -0.0610485, 0, 0.0610485, 0.998135, 0.002, -0.190814, -0.435921)
@@ -4563,7 +4759,7 @@ target_position = Vector3(0, 0.78, 0)
 target_position = Vector3(0, -0.15, 0)
 script = ExtResource("24_8mwp6")
 
-[node name="SoundManager" type="Node" parent="."]
+[node name="SoundManager" type="Node" parent="." groups=["SoundManager"]]
 script = ExtResource("15_c6x0f")
 
 [node name="land1" type="AudioStreamPlayer" parent="SoundManager"]
@@ -4645,7 +4841,7 @@ stream = ExtResource("28_8ynux")
 stream = ExtResource("29_d30e8")
 
 [node name="switch_hand" type="AudioStreamPlayer" parent="SoundManager"]
-stream = ExtResource("30_6pogt")
+stream = ExtResource("44_7x5p2")
 
 [node name="swing1" type="AudioStreamPlayer" parent="SoundManager"]
 stream = ExtResource("31_ie76m")
@@ -4681,7 +4877,7 @@ stream = ExtResource("42_6eb1q")
 stream = ExtResource("43_wvbyc")
 
 [node name="switchhand" type="AudioStreamPlayer" parent="SoundManager"]
-stream = ExtResource("30_6pogt")
+stream = ExtResource("44_lgaa7")
 
 [node name="switchhand2" type="AudioStreamPlayer" parent="SoundManager"]
 stream = ExtResource("44_7x5p2")
@@ -4692,6 +4888,12 @@ stream = ExtResource("45_1kmt7")
 [node name="flashlight" type="AudioStreamPlayer" parent="SoundManager"]
 stream = ExtResource("46_lgaa7")
 
+[node name="puzzlejingle" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("48_qns6m")
+
+[node name="puzzlecomplete" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("49_fatyj")
+
 [node name="UI" type="CanvasLayer" parent="." groups=["HUD"]]
 process_mode = 3
 script = ExtResource("37_f4lon")
@@ -4699,7 +4901,7 @@ script = ExtResource("37_f4lon")
 [node name="objective" type="Node2D" parent="UI"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(576, 0)
+position = Vector2(960, 0)
 
 [node name="obj" type="Label" parent="UI/objective"]
 offset_left = -97.0
@@ -4734,38 +4936,38 @@ volume_db = 1.0
 [node name="tutorial" type="Node2D" parent="UI"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(1156, 239)
+position = Vector2(1920, 239)
 
 [node name="gradient" type="TextureRect" parent="UI/tutorial"]
-offset_right = 359.0
-offset_bottom = 133.0
+offset_right = 520.0
+offset_bottom = 184.0
 texture = SubResource("GradientTexture1D_6eb1q")
 
 [node name="tutorial" type="Label" parent="UI/tutorial"]
 offset_left = 20.0
 offset_top = 7.0
-offset_right = 356.0
-offset_bottom = 37.0
+offset_right = 520.0
+offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.573113, 0.888242, 1, 1)
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 26
 text = "TUTORIAL"
 
 [node name="text" type="Label" parent="UI/tutorial"]
 offset_left = 20.0
-offset_top = 41.0
-offset_right = 356.0
-offset_bottom = 115.0
+offset_top = 46.0
+offset_right = 500.0
+offset_bottom = 175.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 22
 text = "Place a Battery into the Reciever to
 Restore Power"
 autowrap_mode = 2
 
 [node name="seperator" type="HSeparator" parent="UI/tutorial"]
 offset_left = 20.0
-offset_top = 37.0
-offset_right = 359.0
-offset_bottom = 41.0
+offset_top = 41.0
+offset_right = 520.0
+offset_bottom = 46.0
 theme_override_styles/separator = SubResource("StyleBoxLine_7x5p2")
 
 [node name="tooltip" type="AudioStreamPlayer" parent="UI/tutorial"]
@@ -4774,7 +4976,7 @@ stream = ExtResource("50_gvnt1")
 [node name="tooltip" type="Node2D" parent="UI"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(576, 700)
+position = Vector2(960, 1200)
 metadata/_edit_use_anchors_ = true
 
 [node name="tooltiplabel" type="Label" parent="UI/tooltip"]
@@ -4802,12 +5004,13 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(83, 57)
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/saving"]
-scale = Vector2(0.235, 0.235)
+position = Vector2(27.92, 31.42)
+scale = Vector2(0.344063, 0.357734)
 texture = ExtResource("51_f8nak")
 
 [node name="crosshair" type="Node2D" parent="UI"]
-position = Vector2(576, 324)
-scale = Vector2(0.35, 0.35)
+position = Vector2(960, 540)
+scale = Vector2(0.45, 0.45)
 script = ExtResource("38_8ynux")
 
 [node name="ColorRect" type="ColorRect" parent="UI/crosshair"]
@@ -4826,6 +5029,8 @@ offset_right = 45.0
 offset_bottom = 135.0
 rotation = -1.5708
 mouse_filter = 2
+
+[node name="SelectionWheel" parent="UI" instance=ExtResource("56_fatyj")]
 
 [node name="ObjectiveAnimation" type="AnimationPlayer" parent="UI"]
 libraries = {
@@ -4860,9 +5065,12 @@ mouse_filter = 2
 script = ExtResource("53_yxu6j")
 
 [node name="ColorRect2" type="ColorRect" parent="UI/inventory"]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.764706)
 
 [node name="ColorRect" type="TextureRect" parent="UI/inventory"]
@@ -4877,7 +5085,6 @@ expand_mode = 1
 
 [node name="Tabs" type="Node2D" parent="UI/inventory"]
 position = Vector2(62, 55)
-scale = Vector2(0.75, 0.75)
 
 [node name="Q" type="Label" parent="UI/inventory/Tabs"]
 offset_top = 1.0
@@ -4955,14 +5162,14 @@ vertical_alignment = 1
 [node name="TitleSeperator" type="HSeparator" parent="UI/inventory/Tabs"]
 offset_left = 620.0
 offset_top = 72.0
-offset_right = 1369.0
+offset_right = 1774.0
 offset_bottom = 76.0
 theme_override_styles/separator = SubResource("StyleBoxLine_uvbbp")
 
 [node name="TitleSeperator2" type="HSeparator" parent="UI/inventory/Tabs"]
-offset_top = 679.0
-offset_right = 1369.0
-offset_bottom = 708.0
+offset_top = 882.0
+offset_right = 1774.0
+offset_bottom = 911.0
 theme_override_styles/separator = SubResource("StyleBoxLine_uvbbp")
 
 [node name="TabIndecator" type="HSeparator" parent="UI/inventory/Tabs"]
@@ -4973,10 +5180,10 @@ offset_bottom = 91.0
 theme_override_styles/separator = SubResource("StyleBoxLine_3e3ym")
 
 [node name="back" type="Label" parent="UI/inventory/Tabs"]
-offset_left = 1181.0
-offset_top = 708.0
-offset_right = 1369.0
-offset_bottom = 771.0
+offset_left = 1580.0
+offset_top = 920.0
+offset_right = 1768.0
+offset_bottom = 983.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
@@ -4987,10 +5194,10 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="read" type="Label" parent="UI/inventory/Tabs"]
-offset_left = 992.0
-offset_top = 708.0
-offset_right = 1180.0
-offset_bottom = 771.0
+offset_left = 1391.0
+offset_top = 920.0
+offset_right = 1579.0
+offset_bottom = 983.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
@@ -5004,15 +5211,15 @@ vertical_alignment = 1
 position = Vector2(0, 109)
 
 [node name="HSeparator" type="HSeparator" parent="UI/inventory/section"]
-offset_top = 82.0
+offset_top = 121.875
 offset_right = 376.0
-offset_bottom = 86.0
+offset_bottom = 125.875
 theme_override_styles/separator = SubResource("StyleBoxLine_gxi5p")
 
 [node name="title" type="Label" parent="UI/inventory/section"]
-offset_top = 19.0
+offset_top = 58.875
 offset_right = 375.0
-offset_bottom = 95.0
+offset_bottom = 134.875
 theme_override_colors/font_color = Color(0.341176, 0.819608, 1, 1)
 theme_override_colors/font_outline_color = Color(0.341176, 0.819608, 1, 1)
 theme_override_constants/paragraph_spacing = 0
@@ -5024,15 +5231,15 @@ horizontal_alignment = 2
 uppercase = true
 
 [node name="decription" type="Label" parent="UI/inventory/section"]
-offset_left = 673.0
-offset_top = 421.0
-offset_right = 1108.0
-offset_bottom = 465.0
+offset_left = 1143.0
+offset_top = 698.0
+offset_right = 1830.0
+offset_bottom = 832.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/paragraph_spacing = 0
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("51_gvnt1")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 38
 text = "This is a description
 This is a description"
 horizontal_alignment = 1
@@ -5042,19 +5249,19 @@ uppercase = true
 
 [node name="Selected" type="VSeparator" parent="UI/inventory/section"]
 offset_left = 156.0
-offset_top = 104.0
+offset_top = 143.875
 offset_right = 166.0
-offset_bottom = 143.0
+offset_bottom = 182.875
 theme_override_styles/separator = SubResource("StyleBoxLine_yxu6j")
 
 [node name="item_image" type="MeshInstance2D" parent="UI/inventory/section"]
-position = Vector2(890.5, 214)
-scale = Vector2(435, 403.75)
+position = Vector2(1490, 376)
+scale = Vector2(552, 524)
 mesh = SubResource("QuadMesh_68syb")
 texture = ExtResource("61_x0uyb")
 
 [node name="buttons" type="Node2D" parent="UI/inventory/section"]
-position = Vector2(0, 86)
+position = Vector2(0, 125.875)
 
 [node name="InvButton" parent="UI/inventory/section/buttons" instance=ExtResource("60_mdkl3")]
 offset_left = 174.0
@@ -5062,6 +5269,59 @@ offset_top = 18.0
 offset_right = 567.0
 offset_bottom = 57.0
 text = "Caution: This is a TEST!"
+
+[node name="Reading" type="Panel" parent="UI/inventory/section"]
+visible = false
+offset_top = -112.0
+offset_right = 1920.0
+offset_bottom = 971.0
+
+[node name="Background" type="Sprite2D" parent="UI/inventory/section/Reading"]
+position = Vector2(962, 541.5)
+scale = Vector2(1.00208, 1.00278)
+texture = ExtResource("65_lfyh2")
+
+[node name="notetitle" type="Label" parent="UI/inventory/section/Reading"]
+layout_mode = 0
+offset_top = 123.0
+offset_right = 1924.0
+offset_bottom = 197.0
+theme_override_fonts/font = ExtResource("51_gvnt1")
+theme_override_font_sizes/font_size = 40
+text = "Experiment 1006"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="notecontent" type="Label" parent="UI/inventory/section/Reading"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 257.0
+offset_right = 1530.0
+offset_bottom = 940.0
+theme_override_fonts/font = ExtResource("51_gvnt1")
+theme_override_font_sizes/font_size = 28
+text = "Experiment 1006"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Seperator" type="HSeparator" parent="UI/inventory/section/Reading"]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 186.0
+offset_right = 1363.0
+offset_bottom = 245.0
+theme_override_styles/separator = SubResource("StyleBoxLine_soeee")
+
+[node name="Button" type="Button" parent="UI/inventory/section/Reading"]
+layout_mode = 0
+offset_left = 1702.0
+offset_top = 982.0
+offset_right = 1862.0
+offset_bottom = 1040.0
+theme_override_fonts/font = ExtResource("51_gvnt1")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+flat = true
 
 [node name="Open" type="AudioStreamPlayer" parent="UI/inventory"]
 stream = ExtResource("58_ntwt4")
@@ -5085,3 +5345,4 @@ player_body = NodePath("..")
 
 [connection signal="timeout" from="Grabpack/Pack/LeftHandContainer/Timer" to="Grabpack/Pack/LeftHandContainer" method="retract_hand"]
 [connection signal="timeout" from="Grabpack/Pack/RightHandContainer/Timer" to="Grabpack/Pack/RightHandContainer" method="retract_hand"]
+[connection signal="pressed" from="UI/inventory/section/Reading/Button" to="UI/inventory" method="close_note"]

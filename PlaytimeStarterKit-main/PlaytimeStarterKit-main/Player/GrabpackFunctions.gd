@@ -6,11 +6,13 @@ var left_hand: Node3D = null
 var right_hand: Node3D = null
 var item_raycast: RayCast3D = null
 var hud: CanvasLayer = null
+var sound_manager: Node = null
 
 func reset_objects():
 	grabpack = get_tree().get_first_node_in_group("Grabpack")
 	player = get_tree().get_first_node_in_group("Player")
 	hud = get_tree().get_first_node_in_group("HUD")
+	sound_manager = get_tree().get_first_node_in_group("SoundManager")
 	
 	left_hand = get_tree().get_first_node_in_group("LeftHand")
 	right_hand = get_tree().get_first_node_in_group("RightHand")
@@ -124,7 +126,7 @@ func animate_right(anim_name: String):
 func right_seek(time: float):
 	right_hand.seek_animation(time)
 
-func add_hand(hand_scene: PackedScene):
+func add_hand(hand_scene: PackedScene, hand_idx: int = -1):
 	var hand_instance = hand_scene.instantiate()
 	if not hand_instance.has_node("Useless"):
 		var inventory_icon: Texture2D = null
@@ -140,8 +142,11 @@ func add_hand(hand_scene: PackedScene):
 			item_array.append(description)
 		Inventory.items_Equipment.append(item_array)
 	hand_instance.queue_free()
-	right_hand.hands.append(hand_scene)
-func remove_hand(hand_name: String, replace_with_none: bool = true):
+	if hand_idx < 0: right_hand.hands.append(hand_scene)
+	else: right_hand.hands.insert(hand_idx, hand_scene)
+	var index: int = hand_idx if hand_idx > -1 else 10
+	right_hand.queue_hand_switch(index)
+func remove_hand(hand_name: String, replace_with_none: bool = true, auto_fix_hand: bool = true):
 	var hand_idx: int = 0
 	for i in right_hand.hands.size():
 		var hand_instance = right_hand.hands[i].instantiate()
@@ -152,9 +157,27 @@ func remove_hand(hand_name: String, replace_with_none: bool = true):
 		right_hand.hands[hand_idx] = preload("res://Player/Grabpack/Hands/none.tscn")
 	else:
 		right_hand.hands.remove_at(hand_idx)
-	Inventory.remove_item("items_Equipment", "RedHand")
+	Inventory.remove_item("items_Equipment", hand_name)
 	
-	if right_hand.current_hand == hand_idx:
+	if right_hand.current_hand == hand_idx and auto_fix_hand:
+		if replace_with_none:
+			right_hand.set_hand(hand_idx)
+		else:
+			right_hand.set_hand(hand_idx-1)
+func remove_hand_index(hand_idx: int, replace_with_none: bool = true, auto_fix_hand: bool = true):
+	var hand_name: String = ""
+	
+	var hand_instance = right_hand.hands[hand_idx].instantiate()
+	hand_name = hand_instance.name
+	hand_instance.queue_free()
+	
+	if replace_with_none:
+		right_hand.hands[hand_idx] = preload("res://Player/Grabpack/Hands/none.tscn")
+	else:
+		right_hand.hands.remove_at(hand_idx)
+	Inventory.remove_item("items_Equipment", hand_name)
+	
+	if right_hand.current_hand == hand_idx and auto_fix_hand:
 		if replace_with_none:
 			right_hand.set_hand(hand_idx)
 		else:
